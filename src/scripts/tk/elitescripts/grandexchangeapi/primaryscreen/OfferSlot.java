@@ -5,9 +5,7 @@ import org.tribot.api2007.types.RSInterfaceChild;
 import org.tribot.api2007.types.RSInterfaceComponent;
 import org.tribot.api2007.types.RSInterfaceMaster;
 
-/**
- * Created by joe on 5/7/2015.
- */
+
 public class OfferSlot {
     public enum type { SELL , BUY, EMPTY };
     private RSInterfaceComponent[] iFaceComponent;

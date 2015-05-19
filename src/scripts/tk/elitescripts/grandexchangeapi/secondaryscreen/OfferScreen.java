@@ -5,9 +5,7 @@ import org.tribot.api2007.types.RSItemDefinition;
 
 import java.util.ArrayList;
 
-/**
- * Created by joe on 5/10/2015.
- */
+
 public class OfferScreen {
     public enum screenType { SELL , BUY, NOOFFER};
 

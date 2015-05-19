@@ -3,9 +3,7 @@ package scripts.tk.elitescripts.grandexchangeapi.primaryscreen;
 import org.tribot.api2007.types.RSInterface;
 import org.tribot.api2007.types.RSInterfaceComponent;
 
-/**
- * Created by joe on 5/8/2015.
- */
+
 public class EmptyOfferSlot extends OfferSlot {
 
     private RSInterface buyOfferIFace;

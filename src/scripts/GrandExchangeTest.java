@@ -10,7 +10,7 @@ import scripts.tk.elitescripts.grandexchangeapi.GrandExchange;
 
 
 
-@ScriptManifest(authors = { "Warfront1" }, category = "Tools", name = "GE API Test")
+@ScriptManifest(authors = { "Warfront1" }, category = "Tools", name = "GE 2API Test")
 public class GrandExchangeTest extends Script {
 
     @Override

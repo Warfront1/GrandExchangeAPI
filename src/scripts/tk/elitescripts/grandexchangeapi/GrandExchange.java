@@ -11,9 +11,7 @@ import scripts.tk.elitescripts.grandexchangeapi.secondaryscreen.OfferScreen;
 
 import java.util.ArrayList;
 
-/**
- * Created by joe on 5/7/2015.
- */
+
 public class GrandExchange {
     private int interfaceMasterID = 465;
     private RSInterfaceMaster grandexchangeIFace;
