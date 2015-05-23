@@ -42,4 +42,14 @@ public class EmptyOfferSlot extends OfferSlot {
     public RSInterface getBuyOfferIFace() {
         return buyOfferIFace;
     }
+    public void clickBuyOffer(){
+        if(this.buyOfferIFace!=null){
+            this.buyOfferIFace.click("");
+        }
+    }
+    public void clickSellOffer(){
+        if(this.sellOfferIFace!=null){
+            this.sellOfferIFace.click("");
+        }
+    }
 }

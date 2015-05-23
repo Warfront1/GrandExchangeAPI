@@ -1,5 +1,7 @@
 package scripts.tk.elitescripts.grandexchangeapi.secondaryscreen;
 
+import org.tribot.api2007.Interfaces;
+import org.tribot.api2007.types.RSInterface;
 import org.tribot.api2007.types.RSInterfaceComponent;
 import org.tribot.api2007.types.RSItemDefinition;
 
@@ -73,7 +75,12 @@ public class OfferScreen {
         }
         return -1;
     }
-
+    public boolean isOpen(){
+        if(this.markGuidePriceButton!=null){
+            return !this.markGuidePriceButton.isHidden(true);
+        }
+        return false;
+    }
     private void setButtons() {
         if (this.iFaceComponent != null) {
             for (RSInterfaceComponent individualComponent : this.iFaceComponent) {
@@ -154,7 +161,7 @@ public class OfferScreen {
                 }
             }
         }
-        return Math.max(coinvalueone,coinvaluetwo);
+        return Math.max(coinvalueone, coinvaluetwo);
     }
     public String getItemName(){
         RSItemDefinition itemDef  = RSItemDefinition.get(this.itemID);
@@ -165,6 +172,12 @@ public class OfferScreen {
             }
         }
         return null;
+    }
+    public void clickConfirmButton(){
+        RSInterface confirmButton = Interfaces.get(465, 24);
+        if(confirmButton!=null){
+            confirmButton.click("");
+        }
     }
     public OfferScreen.screenType getScreenType() {
         return this.screenType;

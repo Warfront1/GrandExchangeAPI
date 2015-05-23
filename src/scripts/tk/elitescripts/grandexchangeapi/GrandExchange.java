@@ -1,9 +1,11 @@
 package scripts.tk.elitescripts.grandexchangeapi;
 
+import org.tribot.api.Timing;
+import org.tribot.api.types.generic.Condition;
 import org.tribot.api2007.Interfaces;
-import org.tribot.api2007.types.RSInterfaceChild;
-import org.tribot.api2007.types.RSInterfaceComponent;
-import org.tribot.api2007.types.RSInterfaceMaster;
+import org.tribot.api2007.NPCs;
+import org.tribot.api2007.WebWalking;
+import org.tribot.api2007.types.*;
 import scripts.tk.elitescripts.grandexchangeapi.primaryscreen.ActiveOfferSlot;
 import scripts.tk.elitescripts.grandexchangeapi.primaryscreen.EmptyOfferSlot;
 import scripts.tk.elitescripts.grandexchangeapi.primaryscreen.OfferSlot;
@@ -57,6 +59,12 @@ public class GrandExchange {
             finalreturnArrayList.add(new OfferSlot(iFaceComponents3));
         }
         return finalreturnArrayList.toArray(new OfferSlot[finalreturnArrayList.size()]);
+    }
+    public void clickCollectButton(){
+        RSInterfaceComponent collectionButton = getCollectButton();
+        if(collectionButton!=null && !collectionButton.isHidden()){
+            collectionButton.click("");
+        }
     }
     public boolean canCollect(){
         RSInterfaceComponent collectionButton = getCollectButton();
@@ -193,5 +201,27 @@ public class GrandExchange {
             return !backButton.isHidden(true);
         }
         return false;
+    }
+    public void openGrandExchange(){
+        RSTile GrandExchangeTile = new RSTile(3166,3487,0);
+        RSNPC[] grandExchangeClerk = NPCs.findNearest("Grand Exchange Clerk");
+        if(grandExchangeClerk.length>0){
+            if(grandExchangeClerk[0].isClickable()){
+                if(grandExchangeClerk[0].click("Exchange Grand Exchange Clerk")){
+                    Timing.waitCondition(new Condition(){
+                        @Override
+                        public boolean active() {
+                            return new GrandExchange().isOpen();
+                        }
+                    },3000);
+                }
+            }
+            else{
+                WebWalking.walkTo(grandExchangeClerk[0]);
+            }
+        }
+        else{
+            WebWalking.walkTo(GrandExchangeTile);
+        }
     }
 }
