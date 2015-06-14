@@ -9,8 +9,8 @@ import org.tribot.api2007.types.RSItem;
 import java.util.ArrayList;
 
 public class ItemSelection {
-    private int interfaceMaster = 548;
-    private int interfaceChild = 125;
+    private int interfaceMaster = 162;
+    private int interfaceChild = 38;
     private RSInterfaceComponent[] components;
     private RSItem[] items;
     public ItemSelection(){
